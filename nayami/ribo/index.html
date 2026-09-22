@@ -400,6 +400,8 @@ document.getElementById('form').addEventListener('submit',function(){gtag('event
 -->
 
 <script>
+// お問い合わせフォームの送信先（ここだけ変えれば切り替えられる）
+var FORM_TO = 'yasu.koike@gmail.com';
 (function(){
   document.documentElement.classList.add('js');
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -429,13 +431,18 @@ document.getElementById('form').addEventListener('submit',function(){gtag('event
     document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
     start();
   })();
-  // フォーム（送信先が決まるまでは画面上で受付表示）
+  // フォーム: FormSubmit 経由でメールに届ける。失敗時は電話への案内を出す
   var f=document.getElementById('form');
   f.addEventListener('submit',function(e){
     e.preventDefault();
-    var name=document.getElementById('f-name'),tel=document.getElementById('f-tel');
+    var name=document.getElementById('f-name'),tel=document.getElementById('f-tel'),mail=document.getElementById('f-mail'),body=document.getElementById('f-body');
     if(!name.value.trim()){name.focus();return;} if(!tel.value.trim()){tel.focus();return;}
-    document.getElementById('f-sent').hidden=false;var b=document.getElementById('f-submit');b.disabled=true;b.textContent='送信しました';
+    var b=document.getElementById('f-submit');b.disabled=true;b.textContent='送信しています…';
+    var data={_subject:'【無料相談】Webフォームからのお問い合わせ',_template:'table',_captcha:'false',お名前:name.value.trim(),電話番号:tel.value.trim(),メール:mail.value.trim(),ご相談内容:body.value.trim(),送信元ページ:location.href};
+    fetch('https://formsubmit.co/ajax/'+FORM_TO,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.ok?r.json():Promise.reject(r);})
+      .then(function(){var s=document.getElementById('f-sent');s.hidden=false;s.textContent='受け付けました。翌営業日までにご連絡いたします。';b.textContent='送信しました';})
+      .catch(function(){var s=document.getElementById('f-sent');s.hidden=false;s.style.color='#C0392B';s.textContent='送信できませんでした。お手数ですが、お電話（03-0000-0000）でご連絡ください。';b.disabled=false;b.textContent='もう一度送信する';});
   });
 })();
 </script>
