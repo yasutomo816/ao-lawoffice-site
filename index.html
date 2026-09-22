@@ -118,6 +118,29 @@ ul{margin:0;padding:0;list-style:none}
 @media(max-width:520px){.worries{grid-template-columns:1fr}.worries a{padding:16px 16px;font-size:16px}}
 .worry-note{text-align:center;margin-top:22px;font-size:16px;color:var(--ink-2)}
 
+/* 司法書士のメリット */
+.merits{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.merit{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 24px;display:flex;gap:18px;align-items:flex-start}
+.merit .ico{flex:none;width:56px;height:56px;border-radius:50%;background:var(--sun-soft);display:grid;place-items:center;color:var(--accent)}
+.merit .ico svg{width:30px;height:30px}
+.merit h3{font-size:22px;letter-spacing:.06em;margin-bottom:6px}
+.merit h3 em{font-style:normal;color:var(--accent)}
+.merit p{color:var(--ink-2);font-size:16px}
+.merit.big{grid-column:1/-1;background:linear-gradient(120deg,var(--deep),var(--accent));color:#fff;border:0}
+.merit.big h3{color:#fff;font-size:26px}
+.merit.big h3 em{color:#FFE08A}
+.merit.big p{color:rgba(255,255,255,.95);font-size:17px}
+.merit.big .ico{background:rgba(255,255,255,.18);color:#FFE08A}
+@media(max-width:760px){.merits{grid-template-columns:1fr}.merit{padding:22px 18px;gap:12px;flex-direction:column}.merit .ico{width:48px;height:48px}.merit h3{font-size:21px}.merit.big h3{font-size:23px}}
+.compare{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:26px}
+.compare th,.compare td{padding:14px 16px;border-top:1px solid var(--line);text-align:left;font-size:16px;vertical-align:top}
+.compare thead th{background:var(--mist);border-top:0;font-size:15px;color:var(--ink-2);font-weight:500}
+.compare thead th.us{background:var(--accent);color:#fff;font-weight:700}
+.compare tbody th{font-weight:700;white-space:nowrap;width:26%}
+.compare td.us{background:#F5FAFF;font-weight:500}
+.compare .ok{color:var(--ok);font-weight:700}
+.compare-note{margin-top:10px}
+
 /* 債務整理の種類 */
 .types{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .type{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 24px;display:flex;flex-direction:column;gap:12px;border-top:5px solid var(--accent)}
@@ -254,7 +277,7 @@ ul{margin:0;padding:0;list-style:none}
   <div class="wrap">
     <a class="brand" href="#top"><b>あお司法書士法人</b><span>新宿の債務整理・借金相談</span></a>
     <nav class="nav" aria-label="主要ナビゲーション">
-      <a href="#worries">お悩み別</a><a href="#types">債務整理の種類</a><a href="#fee">費用</a><a href="#cases">解決事例</a><a href="#faq">よくある質問</a><a href="#access">アクセス</a>
+      <a href="#worries">お悩み別</a><a href="#merit">司法書士のメリット</a><a href="#types">債務整理の種類</a><a href="#fee">費用</a><a href="#faq">よくある質問</a><a href="#access">アクセス</a>
     </nav>
     <div class="head-cta">
       <a class="btn tel" href="tel:0300000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>03-0000-0000</a>
@@ -265,7 +288,7 @@ ul{margin:0;padding:0;list-style:none}
 </header>
 <div class="drawer" id="drawer" hidden>
   <button class="close" id="menu-close" aria-label="メニューを閉じる">×</button>
-  <a href="#worries">お悩み別</a><a href="#types">債務整理の種類</a><a href="#fee">費用</a><a href="#cases">解決事例</a><a href="#faq">よくある質問</a><a href="#profile">司法書士紹介</a><a href="#access">アクセス</a><a href="#contact">無料相談</a>
+  <a href="#worries">お悩み別</a><a href="#merit">司法書士のメリット</a><a href="#types">債務整理の種類</a><a href="#fee">費用</a><a href="#cases">解決事例</a><a href="#faq">よくある質問</a><a href="#profile">司法書士紹介</a><a href="#access">アクセス</a><a href="#contact">無料相談</a>
 </div>
 
 <main id="top">
@@ -276,8 +299,8 @@ ul{margin:0;padding:0;list-style:none}
       <div class="copy">
         <span class="kicker" id="kicker" data-kickers="新宿の債務整理なら|督促が止まる日|取り戻す、穏やかな朝|あなたの人生を">新宿の債務整理なら</span>
         <h1 id="h1"><span class="on">借金の返済・督促に、<br><em>もう悩まない。</em></span><span>督促が止まる。<br>その日から、<em>人生が動き出す</em>。</span><span>朝、電話に怯えない。<br>それだけで、<em>世界は変わる</em>。</span><span>あなたの人生を、<br>もう一度<em>あなたの手に</em>。</span></h1>
-        <p class="sub" id="sub"><span class="on">新宿の債務整理なら、あお司法書士法人。ご相談の当日に受任通知を発送し、督促を止めます。家族や職場に知られずに進める方法もあります。</span><span>受任通知を送った瞬間から、貸金業者はあなたに連絡できなくなります。まず、静けさを取り戻しましょう。</span><span>利息のない返済計画か、支払い義務の免除。出口は法律に用意されています。あとは、一緒に選ぶだけです。</span><span>貯金を始めた、家族と旅行に行けた。そんなご報告を、私たちは何度も受け取っています。次は、あなたの番です。</span></p>
-        <div class="badges"><span>初回相談 無料</span><span>秘密厳守</span><span>受任通知 当日発送</span><span>土曜・オンライン対応<span class="kari">要確認</span></span></div>
+        <p class="sub" id="sub"><span class="on">新宿の債務整理なら、あお司法書士法人。司法書士だから、弁護士より費用を抑えやすく、テレビ電話なら来所せずに全国どこからでもご相談いただけます。ご相談の当日に受任通知を発送し、督促を止めます。</span><span>受任通知を送った瞬間から、貸金業者はあなたに連絡できなくなります。まず、静けさを取り戻しましょう。</span><span>利息のない返済計画か、支払い義務の免除。出口は法律に用意されています。あとは、一緒に選ぶだけです。</span><span>貯金を始めた、家族と旅行に行けた。そんなご報告を、私たちは何度も受け取っています。次は、あなたの番です。</span></p>
+        <div class="badges"><span>初回相談 無料</span><span>テレビ電話で相談OK・来所不要</span><span>弁護士より費用を抑えやすい</span><span>秘密厳守</span><span>受任通知 当日発送</span></div>
         <div class="acts">
           <a class="btn sun" href="#contact">無料相談を申し込む</a>
           <a class="btn" href="tel:0300000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>電話で相談する</a>
@@ -290,7 +313,7 @@ ul{margin:0;padding:0;list-style:none}
   <!-- ② 無料相談CTA -->
   <div class="cta-band">
     <div class="wrap">
-      <div class="msg">今日ご連絡いただければ、今日から督促は止まります。<small>電話受付 平日 9:30–19:00 ／ 土曜 10:00–17:00<span class="kari">要確認</span>　Webフォームは24時間受付</small></div>
+      <div class="msg">今日ご連絡いただければ、今日から督促は止まります。<small>テレビ電話・電話・来所からお選びいただけます　電話受付 平日 9:30–19:00 ／ 土曜 10:00–17:00<span class="kari">要確認</span>　Webフォームは24時間受付</small></div>
       <div class="acts"><a class="btn sun" href="#contact">無料相談を申し込む</a><a class="btn tel" href="tel:0300000000">03-0000-0000</a></div>
     </div>
   </div>
@@ -315,8 +338,50 @@ ul{margin:0;padding:0;list-style:none}
     </div>
   </section>
 
+  <!-- ③-2 司法書士に頼むメリット -->
+  <section class="sec alt" id="merit" aria-labelledby="merit-title">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="en">MERIT</span><h2 id="merit-title">司法書士に頼むメリット</h2><p class="lead">「債務整理は弁護士に頼むもの」と思われがちですが、司法書士には、費用と相談のしやすさで大きな利点があります。</p></div>
+      <div class="merits rv">
+        <article class="merit big">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M7 8.5c0-1.7 2.2-3 5-3s5 1.3 5 3-2.2 3-5 3-5 1.3-5 3 2.2 3 5 3 5-1.3 5-3"/></svg></div>
+          <div><h3>弁護士より<em>費用を抑えやすい</em></h3><p>同じ任意整理でも、司法書士は弁護士に比べて着手金・報酬を低く設定していることが一般的です。受任通知で督促が止まる効果は同じ。減らした返済額が費用で消えてしまっては意味がありません。総額は着手前に書面でお伝えします。</p></div>
+        </article>
+        <article class="merit">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="13" height="14" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></div>
+          <div><h3>テレビ電話で相談できる。<em>来所不要</em></h3><p>スマホやパソコンのテレビ電話で、ご自宅から相談から契約まで進められます。事務所に来る時間が取れない方、人に会うのがつらい方、遠方の方もご利用いただけます。</p></div>
+        </article>
+        <article class="merit">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div><h3>督促を止める力は<em>同じ</em></h3><p>認定司法書士が受任通知を送れば、貸金業者はご本人へ直接取り立てできなくなります。任意整理では、1社あたり140万円以下の債権について交渉や訴訟の代理ができます。</p></div>
+        </article>
+        <article class="merit">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div><h3>敷居が低く、<em>相談しやすい</em></h3><p>「弁護士に頼むほど大ごとではない」と迷っている方にこそ。初回相談は無料で、相談だけで終えても構いません。担当者が最初から最後まで変わりません。</p></div>
+        </article>
+        <article class="merit">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div>
+          <div><h3>個人再生・自己破産も<em>書類作成でサポート</em></h3><p>裁判所に提出する書類の作成と手続きの進め方を、司法書士が一貫して支援します。1社140万円を超える案件や、代理人が必要な事案は、提携の弁護士をご紹介します。</p></div>
+        </article>
+      </div>
+      <div class="table-scroll rv">
+        <table class="compare">
+          <thead><tr><th></th><th class="us">司法書士（当法人）</th><th>弁護士（一般的な例）</th></tr></thead>
+          <tbody>
+            <tr><th>費用</th><td class="us"><span class="ok">抑えやすい</span>　総額を事前に書面で提示</td><td>司法書士より高めに設定されることが多い</td></tr>
+            <tr><th>相談の方法</th><td class="us"><span class="ok">テレビ電話・電話・来所</span>　来所不要で全国から</td><td>事務所により異なる（来所が前提のことも）</td></tr>
+            <tr><th>督促を止める</th><td class="us"><span class="ok">受任通知で当日から</span></td><td>受任通知で当日から</td></tr>
+            <tr><th>任意整理の交渉</th><td class="us">1社140万円以下の債権を代理</td><td>金額の上限なし</td></tr>
+            <tr><th>個人再生・自己破産</th><td class="us">書類作成と手続きを支援</td><td>代理人として対応</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note compare-note">※ 費用は事務所ごとに異なります。金額の目安は「費用」の項目をご覧ください。1社140万円を超える借入がある場合も、まずご相談ください。最適な進め方をご案内します。</p>
+    </div>
+  </section>
+
   <!-- ④ 債務整理の種類 -->
-  <section class="sec alt" id="types" aria-labelledby="types-title">
+  <section class="sec" id="types" aria-labelledby="types-title">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">SERVICE</span><h2 id="types-title">債務整理の種類</h2><p class="lead">守りたいもの（家、車、家族との関係、仕事）に合わせて、4つの方法から選びます。</p></div>
       <div class="types rv">
@@ -349,7 +414,7 @@ ul{margin:0;padding:0;list-style:none}
   </section>
 
   <!-- ⑤ 強み -->
-  <section class="sec" id="strength" aria-labelledby="strength-title">
+  <section class="sec alt" id="strength" aria-labelledby="strength-title">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">STRENGTH</span><h2 id="strength-title">あお司法書士法人が選ばれる理由</h2></div>
       <div class="strength rv">
@@ -361,7 +426,7 @@ ul{margin:0;padding:0;list-style:none}
   </section>
 
   <!-- ⑥ 相談実績 -->
-  <section class="sec alt" id="results" aria-labelledby="results-title">
+  <section class="sec" id="results" aria-labelledby="results-title">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">RESULTS</span><h2 id="results-title">相談実績<span class="kari">実際の記録に差し替え</span></h2><p class="lead">数字はすべて事務所の記録と一致させてから公開します。</p></div>
       <div class="stats rv">
@@ -374,7 +439,7 @@ ul{margin:0;padding:0;list-style:none}
   </section>
 
   <!-- ⑦ 解決事例 -->
-  <section class="sec" id="cases" aria-labelledby="cases-title">
+  <section class="sec alt" id="cases" aria-labelledby="cases-title">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">CASES</span><h2 id="cases-title">解決事例<span class="kari">実例に差し替え</span></h2><p class="lead">匿名化した実際のご相談例を掲載します。以下は記載の型で、数字は実際の案件に差し替えます。</p></div>
       <div class="cases rv">
@@ -386,7 +451,7 @@ ul{margin:0;padding:0;list-style:none}
   </section>
 
   <!-- ⑧ 費用 -->
-  <section class="sec alt" id="fee" aria-labelledby="fee-title">
+  <section class="sec" id="fee" aria-labelledby="fee-title">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">FEE</span><h2 id="fee-title">費用<span class="kari">仮・実際の料金に差し替え</span></h2><p class="lead">「相談したら結局いくらかかるのか」に、先にお答えします。すべて税込。着手前に総額を書面でお渡しします。</p></div>
       <div class="table-scroll rv">
@@ -410,12 +475,12 @@ ul{margin:0;padding:0;list-style:none}
   </section>
 
   <!-- ⑨ 相談の流れ -->
-  <section class="sec" id="flow" aria-labelledby="flow-title">
+  <section class="sec alt" id="flow" aria-labelledby="flow-title">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">FLOW</span><h2 id="flow-title">ご相談の流れ</h2></div>
       <div class="flow rv">
         <article><div class="n">STEP 1</div><h3>ご連絡</h3><p>電話またはWebフォームからご連絡ください。日時を調整し、お持ちいただくものをご案内します。</p><span class="free">無料</span></article>
-        <article><div class="n">STEP 2</div><h3>無料相談</h3><p>個室でじっくり伺います。ご事情に合う方法と、費用の総額を書面でご説明します。オンライン相談も可能です。相談だけで終えても構いません。</p><span class="free">無料</span></article>
+        <article><div class="n">STEP 2</div><h3>無料相談</h3><p>テレビ電話・電話・来所からお選びください。ご事情に合う方法と、費用の総額を書面でご説明します。相談だけで終えても構いません。</p><span class="free">無料</span></article>
         <article><div class="n">STEP 3</div><h3>ご依頼・受任通知</h3><p>ご納得いただいてからご契約となります。債務整理の場合は当日中に受任通知を発送し、督促を止めます。</p></article>
         <article><div class="n">STEP 4</div><h3>解決・生活再建</h3><p>和解や裁判所の決定で手続き完了。その後の返済や生活のご相談も無料でお受けします。</p></article>
       </div>
@@ -423,7 +488,7 @@ ul{margin:0;padding:0;list-style:none}
   </section>
 
   <!-- ⑩ 司法書士紹介 -->
-  <section class="sec alt" id="profile" aria-labelledby="profile-title">
+  <section class="sec" id="profile" aria-labelledby="profile-title">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">PROFILE</span><h2 id="profile-title">担当司法書士のご紹介<span class="kari">要記入</span></h2></div>
       <div class="profile rv">
@@ -443,7 +508,7 @@ ul{margin:0;padding:0;list-style:none}
   </section>
 
   <!-- ⑪ FAQ -->
-  <section class="sec" id="faq" aria-labelledby="faq-title">
+  <section class="sec alt" id="faq" aria-labelledby="faq-title">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">FAQ</span><h2 id="faq-title">よくあるご質問</h2><p class="lead">「相談すること自体が怖い」という方へ。よくいただく不安にお答えします。</p></div>
       <div class="faq rv">
@@ -460,7 +525,8 @@ ul{margin:0;padding:0;list-style:none}
         <details id="faq-house"><summary>家は残せますか？</summary><div class="a">個人再生の住宅ローン特則を使えば、住宅ローンを払い続けながら他の借金を減らし、自宅を残すことができます。任意整理でも住宅ローンを対象から外せます。自己破産では原則として自宅は処分の対象になります。</div></details>
         <details><summary>クレジットカードはどうなりますか？ブラックリストになりますか？</summary><div class="a">債務整理をすると信用情報機関に登録され、一定期間（目安として5〜7年）は新たな借入やカードの作成が難しくなります。いわゆる「ブラックリスト」という名簿はありませんが、この登録のことを指します。期間が過ぎれば登録は消えます。</div></details>
         <details><summary>費用は分割できますか？</summary><div class="a">分割払いに対応しています<span class="kari">要確認</span>。受任通知で返済が止まっている間に、無理のない範囲で費用を積み立てていく方法が一般的です。</div></details>
-        <details><summary>司法書士に依頼するメリットは？</summary><div class="a">弁護士より費用を抑えられることが多く、簡裁訴訟代理等関係業務の認定を受けた司法書士は、1社あたりの債権額が140万円以下の任意整理の交渉や訴訟の代理ができます。140万円を超える場合や事案によっては弁護士をご紹介します。</div></details>
+        <details><summary>司法書士に依頼するメリットは？弁護士とどう違いますか？</summary><div class="a">弁護士より費用を抑えられることが多く、テレビ電話で来所せずに相談・契約まで進められます。認定司法書士は、1社あたり140万円以下の任意整理の交渉や訴訟の代理ができ、受任通知で督促を止める効果は弁護士と同じです。140万円を超える場合や代理人が必要な事案は提携の弁護士をご紹介します。</div></details>
+        <details><summary>事務所に行かなくても相談できますか？</summary><div class="a">はい。スマホやパソコンのテレビ電話で、ご自宅からご相談いただけます。相談から契約、その後のやり取りまでオンラインで完結できます。書類は郵送またはデータでやり取りします。<span class="kari">運用要確認</span></div></details>
         <details><summary>どんな人が相談していますか？</summary><div class="a">会社員、自営業、主婦、年金生活の方など、幅広い方がご相談されています。借入の理由も、生活費の補填、病気や失業、事業の不振、ギャンブルなどさまざまです。理由で判断することはありません。</div></details>
       </div>
       <p class="worry-note" style="margin-top:26px">ここにない不安も、そのままお聞かせください。<a href="#contact" style="color:var(--accent);font-weight:700;text-decoration:underline">あなたの場合はどうなるか、無料相談でお答えします</a>。</p>
@@ -468,7 +534,7 @@ ul{margin:0;padding:0;list-style:none}
   </section>
 
   <!-- ⑫ アクセス -->
-  <section class="sec alt" id="access" aria-labelledby="access-title">
+  <section class="sec" id="access" aria-labelledby="access-title">
     <div class="wrap">
       <div class="sec-head rv"><span class="en">ACCESS</span><h2 id="access-title">事務所案内・アクセス</h2></div>
       <div class="access rv">
@@ -494,7 +560,7 @@ ul{margin:0;padding:0;list-style:none}
   <section class="final" id="contact" aria-labelledby="final-title">
     <div class="wrap">
       <h2 id="final-title">迷っている時間が、<em>いちばんの損失</em>です。</h2>
-      <p>初回相談は無料。相談だけでも大丈夫です。あなたの場合はどうなるか、具体的にお答えします。</p>
+      <p>初回相談は無料。テレビ電話なら来所不要です。相談だけでも大丈夫。あなたの場合はどうなるか、具体的にお答えします。</p>
       <div class="acts"><a class="btn sun" href="#form">無料相談を申し込む</a><a class="btn tel" href="tel:0300000000">03-0000-0000 に電話する</a></div>
       <p class="hours">電話 平日 9:30–19:00 ／ 土曜 10:00–17:00<span class="kari">要確認</span>　Webフォーム 24時間受付</p>
     </div>
