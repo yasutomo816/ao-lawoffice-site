@@ -97,7 +97,21 @@ ul{margin:0;padding:0;list-style:none}
 .dots button.on span{animation:bar 7s linear forwards}
 @keyframes bar{from{width:0}to{width:100%}}
 @media (prefers-reduced-motion: reduce){.slide img,.slide.on img{animation:none;transform:none}.dots button.on span{animation:none;width:100%}}
-@media(max-width:760px){.hero{margin-top:68px;height:auto;min-height:0}.hero>.wrap{padding:130px 20px 34px;align-items:flex-end}.slide::after{background:linear-gradient(180deg,rgba(8,26,48,.05) 0%,rgba(8,26,48,.3) 35%,rgba(8,26,48,.78) 100%)}.copy .kicker{font-size:15px}.copy h1{font-size:clamp(26px,7.2vw,33px);white-space:normal;min-height:0}.copy .sub{font-size:16px;min-height:0}.badges span{font-size:14px;padding:5px 12px}.copy .acts{margin-top:18px}.copy .acts .btn{width:100%}.dots{bottom:auto;top:12px;right:16px}}
+@media(max-width:760px){
+.hero{margin-top:68px;height:calc(100svh - 68px);min-height:560px;max-height:760px}
+.hero>.wrap{padding:36px 18px 22px;align-items:flex-end}
+.slide::after{background:linear-gradient(180deg,rgba(8,26,48,.08) 0%,rgba(8,26,48,.35) 40%,rgba(8,26,48,.82) 100%)}
+.copy .kicker{font-size:15px;margin-bottom:8px}
+.copy h1{font-size:clamp(29px,8vw,36px);line-height:1.32;white-space:normal;min-height:0}
+.copy .sub{display:none}
+.badges{flex-direction:column;align-items:stretch;gap:7px;margin-top:14px}
+.badges span{font-size:17px;font-weight:700;padding:9px 14px;border-radius:10px;background:rgba(8,26,48,.55);border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;gap:10px}
+.badges span::before{content:"✓";color:#FFE08A;font-weight:700;font-size:18px}
+.badges span:nth-child(n+4){display:none}
+.copy .acts{flex-direction:column;align-items:stretch;gap:10px;margin-top:16px}
+.copy .acts .btn{width:100%;padding:16px 18px;font-size:18px}
+.dots{bottom:auto;top:12px;right:16px}
+}
 
 /* CTA帯 */
 .cta-band{background:var(--deep);color:#fff}
@@ -106,7 +120,7 @@ ul{margin:0;padding:0;list-style:none}
 .cta-band .msg small{display:block;font-size:14px;opacity:.9;font-weight:400;margin-top:2px}
 .cta-band .acts{display:flex;flex-wrap:wrap;gap:10px 14px}
 .cta-band .btn{box-shadow:none}
-@media(max-width:760px){.cta-band .wrap{flex-direction:column;align-items:stretch;text-align:center}.cta-band .acts{flex-direction:column}}
+@media(max-width:760px){.cta-band .wrap{flex-direction:column;align-items:stretch;text-align:center;padding-block:14px}.cta-band .acts{display:none}.cta-band .msg{font-size:16px}}
 
 /* お悩み */
 .worries{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -262,9 +276,9 @@ ul{margin:0;padding:0;list-style:none}
 @media(min-width:761px){.footer{padding-bottom:40px}}
 
 /* スマホ固定CTA */
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:35;display:none;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 -6px 24px rgba(11,92,173,.14)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:35;display:none;gap:8px;transform:translateY(110%);transition:transform .3s ease;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 -6px 24px rgba(11,92,173,.14)}
 .sticky .btn{flex:1;padding:14px 10px;font-size:16px;box-shadow:none}
-@media(max-width:760px){.sticky{display:flex}}
+@media(max-width:760px){.sticky{display:flex}.sticky.show{transform:none}}
 
 /* reveal */
 .rv{transition:opacity .8s ease,transform .8s ease}
@@ -300,10 +314,10 @@ ul{margin:0;padding:0;list-style:none}
         <span class="kicker" id="kicker" data-kickers="新宿の債務整理なら|督促が止まる日|取り戻す、穏やかな朝|あなたの人生を">新宿の債務整理なら</span>
         <h1 id="h1"><span class="on">借金の返済・督促に、<br><em>もう悩まない。</em></span><span>督促が止まる。<br>その日から、<em>人生が動き出す</em>。</span><span>朝、電話に怯えない。<br>それだけで、<em>世界は変わる</em>。</span><span>あなたの人生を、<br>もう一度<em>あなたの手に</em>。</span></h1>
         <p class="sub" id="sub"><span class="on">新宿の債務整理なら、あお司法書士法人。司法書士だから、弁護士より費用を抑えやすく、テレビ電話なら来所せずに全国どこからでもご相談いただけます。ご相談の当日に受任通知を発送し、督促を止めます。</span><span>受任通知を送った瞬間から、貸金業者はあなたに連絡できなくなります。まず、静けさを取り戻しましょう。</span><span>利息のない返済計画か、支払い義務の免除。出口は法律に用意されています。あとは、一緒に選ぶだけです。</span><span>貯金を始めた、家族と旅行に行けた。そんなご報告を、私たちは何度も受け取っています。次は、あなたの番です。</span></p>
-        <div class="badges"><span>初回相談 無料</span><span>テレビ電話で相談OK・来所不要</span><span>弁護士より費用を抑えやすい</span><span>秘密厳守</span><span>受任通知 当日発送</span></div>
+        <div class="badges"><span>初回相談 無料・相談だけでもOK</span><span>テレビ電話で相談OK・来所不要</span><span>弁護士より費用を抑えやすい</span><span>秘密厳守</span><span>受任通知 当日発送</span></div>
         <div class="acts">
           <a class="btn sun" href="#contact">無料相談を申し込む</a>
-          <a class="btn" href="tel:0300000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>電話で相談する</a>
+          <a class="btn" href="tel:0300000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>電話で相談　03-0000-0000</a>
         </div>
       </div>
     </div>
@@ -614,6 +628,9 @@ document.getElementById('form').addEventListener('submit',function(){gtag('event
     els.forEach(function(el){io.observe(el);});
   }else{els.forEach(function(el){el.classList.add('in');});}
   setTimeout(function(){els.forEach(function(el){el.classList.add('in');});},1500);
+  var hero=document.querySelector('.hero'),sticky=document.querySelector('.sticky');
+  function onScroll(){var y=window.scrollY||document.documentElement.scrollTop;sticky.classList.toggle('show',y>hero.offsetTop+hero.offsetHeight-160);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   // トップの写真とコピーの切り替え
   (function(){
     var slides=document.querySelectorAll('#slides .slide'),h1=document.querySelectorAll('#h1 span'),subs=document.querySelectorAll('#sub span'),dots=document.querySelectorAll('#dots button');
