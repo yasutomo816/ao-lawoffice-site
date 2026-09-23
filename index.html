@@ -90,7 +90,9 @@ ul{margin:0;padding:0;list-style:none}
 .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,26,48,.66) 0%,rgba(8,26,48,.42) 38%,rgba(8,26,48,.06) 65%,rgba(8,26,48,0) 100%),linear-gradient(180deg,rgba(8,26,48,0) 55%,rgba(8,26,48,.5) 100%)}
 .hero>.wrap{position:relative;height:100%;display:flex;align-items:center;padding-top:10px;padding-bottom:40px}
 .copy{width:min(760px,100%);color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.4)}
-.copy .kicker{font-size:16px;font-weight:700;letter-spacing:.12em;color:#fff;background:var(--accent);padding:6px 16px;border-radius:8px;margin-bottom:16px;display:inline-block;box-shadow:0 6px 16px rgba(30,136,229,.35)}
+.copy .tags{display:flex;gap:10px;margin-bottom:14px}
+.copy .tags span{font-size:17px;font-weight:700;letter-spacing:.12em;color:#fff;background:var(--accent);padding:7px 18px;border-radius:8px;box-shadow:0 6px 16px rgba(30,136,229,.35)}
+.copy .kicker{font-size:16px;font-weight:500;letter-spacing:.18em;color:#FFE08A;margin-bottom:10px;display:block}
 .copy h1{position:relative;min-height:2.6em;font-size:clamp(30px,4vw,58px);line-height:1.4;letter-spacing:.04em;color:#fff;white-space:nowrap}
 .copy h1 span,.copy .sub span{position:absolute;left:0;top:0;right:0;opacity:0;transition:opacity .4s ease,transform .4s ease;transform:translateY(10px);pointer-events:none}
 .copy h1 span.on,.copy .sub span.on{opacity:1;transform:none;position:relative;transition:opacity 1s ease .35s,transform 1s ease .35s;pointer-events:auto}
@@ -109,7 +111,7 @@ ul{margin:0;padding:0;list-style:none}
 .hero{margin-top:68px;height:calc(100svh - 68px);min-height:560px;max-height:760px}
 .hero>.wrap{padding:36px 18px 22px;align-items:flex-end}
 .slide::after{background:linear-gradient(180deg,rgba(8,26,48,.08) 0%,rgba(8,26,48,.35) 40%,rgba(8,26,48,.82) 100%)}
-.copy .kicker{font-size:14px;padding:5px 12px;margin-bottom:10px}
+.copy .tags{gap:8px;margin-bottom:12px}.copy .tags span{font-size:15px;padding:6px 14px}.copy .kicker{font-size:14px;margin-bottom:8px}
 .copy h1{font-size:clamp(29px,8vw,36px);line-height:1.32;white-space:normal;min-height:0}
 .copy .sub{display:none}
 .badges{flex-direction:column;align-items:stretch;gap:7px;margin-top:14px}
@@ -329,6 +331,7 @@ ul{margin:0;padding:0;list-style:none}
     <div class="slides" id="slides" aria-hidden="true"><div class="slide on"><img style="object-position:50% 45%" src="img/top1.jpg" alt=""></div><div class="slide"><img style="object-position:50% 40%" src="img/top2.jpg" alt=""></div><div class="slide"><img style="object-position:35% 45%" src="img/top3.jpg" alt=""></div><div class="slide"><img style="object-position:50% 50%" src="img/top4.jpg" alt=""></div></div>
     <div class="wrap">
       <div class="copy">
+        <div class="tags" aria-hidden="true"><span>債務整理</span><span>全国対応</span></div>
         <span class="kicker" id="kicker" data-kickers="全国どこからでも・テレビ電話で相談OK|督促が止まる日|取り戻す、穏やかな朝|あなたの人生を">全国どこからでも・テレビ電話で相談OK</span>
         <h1 id="h1"><span class="on">借金の返済・督促に、<br><em>もう悩まない。</em></span><span>督促が止まる。<br>その日から、<em>人生が動き出す</em>。</span><span>朝、電話に怯えない。<br>それだけで、<em>世界は変わる</em>。</span><span>あなたの人生を、<br>もう一度<em>あなたの手に</em>。</span></h1>
         <p class="sub" id="sub"><span class="on">債務整理・借金相談は、全国どこからでも。司法書士だから弁護士より費用を抑えやすく、テレビ電話なら来所せずにご自宅から相談できます。ご相談の当日に受任通知を発送し、督促を止めます。</span><span>受任通知を送った瞬間から、貸金業者はあなたに連絡できなくなります。まず、静けさを取り戻しましょう。</span><span>利息のない返済計画か、支払い義務の免除。出口は法律に用意されています。あとは、一緒に選ぶだけです。</span><span>貯金を始めた、家族と旅行に行けた。そんなご報告を、私たちは何度も受け取っています。次は、あなたの番です。</span></p>

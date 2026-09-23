@@ -90,7 +90,9 @@ ul{margin:0;padding:0;list-style:none}
 .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,26,48,.66) 0%,rgba(8,26,48,.42) 38%,rgba(8,26,48,.06) 65%,rgba(8,26,48,0) 100%),linear-gradient(180deg,rgba(8,26,48,0) 55%,rgba(8,26,48,.5) 100%)}
 .hero>.wrap{position:relative;height:100%;display:flex;align-items:center;padding-top:10px;padding-bottom:40px}
 .copy{width:min(760px,100%);color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.4)}
-.copy .kicker{font-size:16px;font-weight:700;letter-spacing:.12em;color:#fff;background:var(--accent);padding:6px 16px;border-radius:8px;margin-bottom:16px;display:inline-block;box-shadow:0 6px 16px rgba(30,136,229,.35)}
+.copy .tags{display:flex;gap:10px;margin-bottom:14px}
+.copy .tags span{font-size:17px;font-weight:700;letter-spacing:.12em;color:#fff;background:var(--accent);padding:7px 18px;border-radius:8px;box-shadow:0 6px 16px rgba(30,136,229,.35)}
+.copy .kicker{font-size:16px;font-weight:500;letter-spacing:.18em;color:#FFE08A;margin-bottom:10px;display:block}
 .copy h1{position:relative;min-height:2.6em;font-size:clamp(30px,4vw,58px);line-height:1.4;letter-spacing:.04em;color:#fff;white-space:nowrap}
 .copy h1 span,.copy .sub span{position:absolute;left:0;top:0;right:0;opacity:0;transition:opacity .4s ease,transform .4s ease;transform:translateY(10px);pointer-events:none}
 .copy h1 span.on,.copy .sub span.on{opacity:1;transform:none;position:relative;transition:opacity 1s ease .35s,transform 1s ease .35s;pointer-events:auto}
@@ -109,7 +111,7 @@ ul{margin:0;padding:0;list-style:none}
 .hero{margin-top:68px;height:calc(100svh - 68px);min-height:560px;max-height:760px}
 .hero>.wrap{padding:36px 18px 22px;align-items:flex-end}
 .slide::after{background:linear-gradient(180deg,rgba(8,26,48,.08) 0%,rgba(8,26,48,.35) 40%,rgba(8,26,48,.82) 100%)}
-.copy .kicker{font-size:14px;padding:5px 12px;margin-bottom:10px}
+.copy .tags{gap:8px;margin-bottom:12px}.copy .tags span{font-size:15px;padding:6px 14px}.copy .kicker{font-size:14px;margin-bottom:8px}
 .copy h1{font-size:clamp(29px,8vw,36px);line-height:1.32;white-space:normal;min-height:0}
 .copy .sub{display:none}
 .badges{flex-direction:column;align-items:stretch;gap:7px;margin-top:14px}
