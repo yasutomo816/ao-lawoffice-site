@@ -282,16 +282,16 @@ ul{margin:0;padding:0;list-style:none}
 @media(max-width:560px){.form{grid-template-columns:1fr;padding:24px 18px}}
 
 /* フッター */
-.footer{border-top:1px solid var(--line);padding-block:32px 110px;font-size:15px}
+.footer{border-top:1px solid var(--line);padding-block:32px 120px;font-size:15px;background:#fff}
 .footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:18px 30px}
 .footer .links{display:flex;flex-wrap:wrap;gap:6px 22px}
 .footer .copy{color:var(--ink);font-size:16px;line-height:1.8}.footer .copy b{display:block;font-size:18px;font-weight:700;letter-spacing:.08em}.footer .copy small{display:block;font-size:14px;color:var(--ink-2);margin-top:4px}
 @media(min-width:761px){.footer{padding-bottom:40px}}
 
 /* スマホ固定CTA */
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:35;display:none;gap:8px;transform:translateY(110%);transition:transform .3s ease;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 -6px 24px rgba(11,92,173,.14)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:35;display:none;gap:8px;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(11,92,173,.14)}
 .sticky .btn{flex:1;padding:14px 10px;font-size:16px;box-shadow:none}
-@media(max-width:760px){.sticky{display:flex}.sticky.show{transform:none}}
+@media(max-width:760px){.sticky{display:flex}.sticky.show{opacity:1;visibility:visible}}
 
 /* reveal */
 .rv{transition:opacity .8s ease,transform .8s ease}
