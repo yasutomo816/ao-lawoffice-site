@@ -75,9 +75,18 @@ ul{margin:0;padding:0;list-style:none}
 .menu-btn{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--accent-ink)}
 @media(max-width:1200px){.nav{display:none}}@media(max-width:1060px){.head-cta .btn.tel{display:none}}
 @media(max-width:760px){.head-cta{display:none}.menu-btn{display:block}.header .wrap{height:68px}.brand b{font-size:19px}.brand span{font-size:12px}}
-.drawer{position:fixed;inset:0;z-index:40;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:22px;padding:24px}
-.drawer a{font-size:22px;letter-spacing:.14em;font-weight:500}
-.drawer .close{position:absolute;top:18px;right:18px;background:none;border:0;font-size:32px;cursor:pointer;color:var(--ink)}
+.drawer{position:fixed;inset:0;z-index:40;background:rgba(15,37,64,.45)}
+.drawer .panel{position:absolute;top:0;right:0;bottom:0;width:min(480px,100%);background:var(--mist);display:flex;flex-direction:column;box-shadow:-8px 0 30px rgba(15,37,64,.18);overflow-y:auto}
+.drawer .head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#fff;border-bottom:1px solid var(--line)}
+.drawer .head b{display:block;font-size:20px;font-weight:700;letter-spacing:.1em;color:var(--accent-ink)}
+.drawer .head small{display:block;font-size:13px;color:var(--ink-2);letter-spacing:.08em}
+.drawer .close{background:none;border:0;font-size:32px;line-height:1;cursor:pointer;color:var(--ink);padding:4px 8px}
+.drawer nav{padding:14px 16px}
+.drawer nav a{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:22px;letter-spacing:.1em;font-weight:500;color:var(--ink);margin-bottom:8px}
+.drawer nav a::after{content:"›";color:var(--accent);font-size:26px;font-weight:700}
+.drawer .foot{margin-top:auto;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--line);display:grid;gap:10px}
+.drawer .foot .btn{width:100%;padding:16px 18px;font-size:18px}
+.drawer .foot small{display:block;text-align:center;font-size:14px;color:var(--ink-2);letter-spacing:.04em}
 
 /* hero */
 .hero{position:relative;margin-top:84px;height:min(calc(92vh - 84px),820px);min-height:600px;overflow:hidden;background:#0F2540}
@@ -348,8 +357,17 @@ ul{margin:0;padding:0;list-style:none}
   </div>
 </header>
 <div class="drawer" id="drawer" hidden>
-  <button class="close" id="menu-close" aria-label="メニューを閉じる">×</button>
-  <a href="../#worries">お悩み別</a><a href="../#merit">司法書士のメリット</a><a href="../#types">債務整理の種類</a><a href="../#fee">費用</a><a href="../#cases">解決事例</a><a href="../#faq">よくある質問</a><a href="../#profile">司法書士紹介</a><a href="../#access">アクセス</a><a href="#contact">無料相談</a>
+  <div class="panel" role="dialog" aria-label="メニュー">
+    <div class="head"><div><b>あお司法書士法人</b><small>債務整理・借金相談｜全国対応</small></div><button class="close" id="menu-close" aria-label="メニューを閉じる">×</button></div>
+    <nav>
+      <a href="../#worries">お悩み別</a><a href="../#merit">司法書士のメリット</a><a href="../#types">債務整理の種類</a><a href="../#fee">費用</a><a href="../#cases">解決事例</a><a href="../#faq">よくある質問</a><a href="../#profile">司法書士紹介</a><a href="../#access">アクセス</a>
+    </nav>
+    <div class="foot">
+      <a class="btn sun" href="#contact">無料相談を申し込む</a>
+      <a class="btn tel" href="tel:0300000000">電話で相談　03-0000-0000</a>
+      <small>電話 平日 10:00–19:00　Webフォーム 24時間受付</small>
+    </div>
+  </div>
 </div>
 
 <main id="top">
@@ -423,6 +441,7 @@ var FORM_TO = 'yasu.koike@gmail.com';
   var d=document.getElementById('drawer');
   document.getElementById('menu-open').addEventListener('click',function(){d.hidden=false;});
   document.getElementById('menu-close').addEventListener('click',function(){d.hidden=true;});
+  d.addEventListener('click',function(e){if(e.target===d)d.hidden=true;});
   d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){d.hidden=true;});});
   var els=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window&&!reduce){
