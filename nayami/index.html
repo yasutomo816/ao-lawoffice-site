@@ -48,7 +48,8 @@ ul{margin:0;padding:0;list-style:none}
 .sec-head .en{display:block;font-size:14px;font-weight:500;letter-spacing:.24em;color:var(--accent-ink);margin-bottom:8px}
 .sec-head .lead{margin-top:14px;color:var(--ink-2);font-size:17px;max-width:38em;margin-inline:auto}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.kari{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.14em;border:1px solid #B9C6D6;color:#5A7190;background:#F3F6FA;padding:1px 8px;margin-left:8px;vertical-align:middle;line-height:1.8;border-radius:3px}
+.nw{white-space:nowrap}
+.kari{display:inline-block;white-space:nowrap;font-size:12px;font-weight:500;letter-spacing:.14em;border:1px solid #B9C6D6;color:#5A7190;background:#F3F6FA;padding:1px 8px;margin-left:8px;vertical-align:middle;line-height:1.8;border-radius:3px}
 .note{font-size:14px;color:var(--ink-3)}
 
 /* ボタン */
@@ -167,7 +168,8 @@ ul{margin:0;padding:0;list-style:none}
 .merit.big h3 em{color:var(--accent-ink);font-style:normal}
 .merit.big p{color:var(--ink-2);font-size:17px}
 .merit.big .ico{background:var(--accent);color:#fff}
-@media(max-width:760px){.merits{grid-template-columns:1fr}.merit{padding:22px 18px;gap:12px;flex-direction:column}.merit .ico{width:48px;height:48px}.merit h3{font-size:21px}.merit.big h3{font-size:23px}}
+@media(max-width:760px){.merits{grid-template-columns:1fr}.merit{padding:22px 18px;gap:12px;flex-direction:column}.merit .ico{width:48px;height:48px}.merit h3{font-size:21px;letter-spacing:.02em}.merit.big h3{font-size:22px}.merit h3 em{white-space:nowrap}
+.compare{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.compare thead,.compare tbody,.compare tr{display:table;width:100%;table-layout:fixed;min-width:600px}.compare th,.compare td{padding:12px 12px;font-size:15px}.compare tbody th{width:22%}}
 .compare{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:26px}
 .compare th,.compare td{padding:14px 16px;border-top:1px solid var(--line);text-align:left;font-size:16px;vertical-align:top}
 .compare thead th{background:var(--mist);border-top:0;font-size:15px;color:var(--ink-2);font-weight:500}
@@ -227,7 +229,7 @@ ul{margin:0;padding:0;list-style:none}
 .fee-points{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
 .fee-points li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:16px;display:flex;gap:10px;align-items:flex-start}
 .fee-points li::before{content:"✓";color:var(--ok);font-weight:700;flex:none}
-@media(max-width:760px){.fee-points{grid-template-columns:1fr}}
+@media(max-width:760px){.fee-points{grid-template-columns:1fr}.fee-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}.fee-table thead,.fee-table tbody,.fee-table tr{display:table;width:100%;table-layout:fixed;min-width:640px}.fee-table th,.fee-table td{padding:12px 12px;font-size:15px;white-space:nowrap}.fee-table tbody th{width:20%}.fee-table .price{font-size:18px}}
 
 /* 流れ */
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -421,7 +423,7 @@ ul{margin:0;padding:0;list-style:none}
 <footer class="footer">
   <div class="wrap">
     <div class="links"><a href="../#types">債務整理</a><a href="../nayami/">お悩み別の解説</a><a href="../#fee">費用</a><a href="../#cases">解決事例</a><a href="../#faq">よくある質問</a><a href="../#profile">司法書士紹介</a><a href="../#access">アクセス</a><a href="#">プライバシーポリシー</a></div>
-    <div class="copy"><b>あお司法書士法人</b>〒160-0022 東京都新宿区新宿1-15-14 DⅡビル2階<br>電話 平日 10:00–19:00　<a href="tel:0300000000" style="color:var(--accent-ink);font-weight:700">03-0000-0000</a><small>© あお司法書士法人</small></div>
+    <div class="copy"><b>あお司法書士法人</b>〒160-0022 東京都新宿区新宿1-15-14 <span class="nw">DⅡビル2階</span><br>電話 平日 10:00–19:00　<a href="tel:0300000000" style="color:var(--accent-ink);font-weight:700">03-0000-0000</a><small>© あお司法書士法人</small></div>
   </div>
 </footer>
 
