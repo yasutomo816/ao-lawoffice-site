@@ -22,11 +22,11 @@
   --ink-2:#32506F;
   --ink-3:#5A7190;
   --line:#D5E4F3;
-  --accent:#0B5CAD;
+  --accent:#1E88E5;
   --sky:#1E88E5;
   --sky-deep:#1976D2;
-  --accent-2:#1E88D6;
-  --deep:#083E78;
+  --accent-2:#42A5F5;
+  --deep:#1976D2;
   --sun:#F5B84A;
   --sun-soft:#FFF1D6;
   --mist:#F3F7FB;
@@ -51,7 +51,7 @@ ul{margin:0;padding:0;list-style:none}
 .note{font-size:14px;color:var(--ink-3)}
 
 /* ボタン */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;background:var(--accent);color:#fff;border:2px solid var(--accent);border-radius:999px;font:inherit;font-size:17px;font-weight:700;letter-spacing:.08em;cursor:pointer;box-shadow:0 10px 24px rgba(11,92,173,.22);transition:background .25s,transform .15s;text-shadow:none;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;background:var(--accent);color:#fff;border:2px solid var(--accent);border-radius:999px;font:inherit;font-size:17px;font-weight:700;letter-spacing:.08em;cursor:pointer;box-shadow:0 10px 24px rgba(30,136,229,.22);transition:background .25s,transform .15s;text-shadow:none;white-space:nowrap}
 .btn:hover{background:var(--deep);transform:translateY(-1px)}
 .btn.tel{background:var(--sky);color:#fff;border-color:var(--sky);box-shadow:0 10px 24px rgba(30,136,229,.28)}
 .btn.tel:hover{background:var(--sky-deep)}
@@ -131,8 +131,8 @@ ul{margin:0;padding:0;list-style:none}
 
 /* お悩み */
 .worries{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.worries a{display:flex;align-items:center;gap:14px;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:17px;font-weight:500;box-shadow:0 6px 18px rgba(11,92,173,.05);transition:transform .15s,box-shadow .15s}
-.worries a:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(11,92,173,.12)}
+.worries a{display:flex;align-items:center;gap:14px;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:17px;font-weight:500;box-shadow:0 6px 18px rgba(30,136,229,.05);transition:transform .15s,box-shadow .15s}
+.worries a:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(30,136,229,.12)}
 .worries a::before{content:"";flex:none;width:12px;height:12px;border-radius:50%;background:var(--sun)}
 .worries a::after{content:"›";margin-left:auto;font-size:26px;color:var(--accent);line-height:1}
 @media(min-width:900px){.worries{grid-template-columns:repeat(3,1fr)}}
@@ -277,7 +277,7 @@ ul{margin:0;padding:0;list-style:none}
 .field label b{color:#C0392B;font-weight:500;margin-left:4px;font-size:13px}
 .field input,.field textarea{background:#fff;border:1px solid #B9CBDD;color:var(--ink);padding:14px 14px;font:inherit;font-size:17px;border-radius:8px;width:100%}
 .field textarea{min-height:130px;resize:vertical}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(11,92,173,.15)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(30,136,229,.15)}
 .form .submit{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:4px}
 .form .submit small{font-size:14px;color:var(--ink-3);text-align:center}
 .form .sent{grid-column:1/-1;font-size:16px;color:var(--ok);text-align:center;font-weight:700}
@@ -291,7 +291,7 @@ ul{margin:0;padding:0;list-style:none}
 @media(min-width:761px){.footer{padding-bottom:40px}}
 
 /* スマホ固定CTA */
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:35;display:none;gap:8px;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(11,92,173,.14)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:35;display:none;gap:8px;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(30,136,229,.14)}
 .sticky .btn{flex:1;padding:14px 10px;font-size:16px;box-shadow:none}
 @media(max-width:760px){.sticky{display:flex}.sticky.show{opacity:1;visibility:visible}}
 
