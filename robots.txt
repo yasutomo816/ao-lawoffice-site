@@ -1,3 +1,2 @@
 User-agent: *
-Allow: /
-Sitemap: https://yasutomo816.github.io/ao-lawoffice-site/sitemap.xml
+Disallow: /
